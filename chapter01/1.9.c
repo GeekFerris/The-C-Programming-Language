@@ -4,7 +4,7 @@
 #include "stdio.h"
 #define MAXLINE 1000 /* 允许的输入行最大长度 */
 
-int getLine(char line[], int maxline);
+int get_line(char s[], int lim);
 void copy(char to[], char from[]);
 
 int main()
@@ -17,7 +17,7 @@ int main()
     char longest[MAXLINE];
 
     max = 0;
-    while ((len = getLine(line, MAXLINE)) > 0)
+    while ((len = get_line(line, MAXLINE)) > 0)
     {
         if (len > max)
         {
@@ -31,7 +31,7 @@ int main()
 }
 
 /* 将一行读入s中并返回其长度 */
-int getLine(char s[], int lim)
+int get_line(char s[], int lim)
 {
     int c, i;
     for(i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i) s[i] = c;
