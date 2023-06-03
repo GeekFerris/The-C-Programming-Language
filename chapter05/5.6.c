@@ -73,3 +73,12 @@ void q_sort(char *v[], int left, int right)
         q_sort(v, last + 1, right);
     }
 }
+
+void swap(char *v[], int i , int j)
+{
+    char *temp;
+
+    temp = v[i];
+    v[i] = v[j];
+    v[j] = temp;
+}
