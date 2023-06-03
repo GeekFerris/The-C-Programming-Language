@@ -53,3 +53,23 @@ void write_lines(char *line_ptr[], int n_lines)
 
     for (i = 0; i < n_lines; ++i) printf("%s\n", line_ptr[i]);
 }
+
+/* 递增顺序排序 */
+void q_sort(char *v[], int left, int right)
+{
+    int i, last;
+    void swap(char *v[], int i, int j);
+
+
+    if(left >= right) return; /* 如果数组元素的个数小于2 则返回 */
+    swap(v, left, (left + right) /2);
+    last = left;
+
+    for (i = left + 1; i <= right; ++i)
+    {
+        if (strcmp(v[i], v[left]) < 0) swap(v, ++last, i);
+        swap(v, left, last);
+        q_sort(v, left, last - 1);
+        q_sort(v, last + 1, right);
+    }
+}
