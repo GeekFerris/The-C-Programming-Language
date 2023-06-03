@@ -2,8 +2,6 @@
 // Created by Ferris on 2023/6/3.
 //
 
-#include "stdlib.h"
-
 int main()
 {
     int x = 1, y = 2, z[10];
