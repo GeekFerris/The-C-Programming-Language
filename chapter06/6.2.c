@@ -35,3 +35,17 @@ struct point add_point(struct point p1, struct point p2) {
 int pt_in_rect(struct point p, struct rect r) {
     return p.x >= r.pt1.x && p.x < r.pt2.x && p.y >= r.pt1.y && p.y < r.pt2.y;
 }
+
+#define min(a, b) ((a) < (b) ? (a) : (b))
+#define max(a, b) ((a) > (b) ? (a) : (b))
+
+/* 将矩形坐标规范化 */
+struct rect canon_rect(struct rect r) {
+    struct rect temp;
+
+    temp.pt1.x = min(r.pt1.x, r.pt2.x);
+    temp.pt1.y = min(r.pt1.y, r.pt2.y);
+    temp.pt2.x = max(r.pt1.x, r.pt2.x);
+    temp.pt2.y = max(r.pt1.y, r.pt2.y);
+    return temp;
+}
