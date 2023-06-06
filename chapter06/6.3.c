@@ -91,3 +91,4 @@ int get_word(char *word, int lim) {
     *w = '\0';
     return word[0];
 }
+
