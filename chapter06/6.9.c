@@ -4,4 +4,3 @@
 #define KEYWORD 01
 #define EXTERNAL 02
 #define STATIC 04
-
